@@ -30,6 +30,13 @@ class Character:
     def is_alive(self):
         return self.__is_alive
 
+    def take_damage(self, damage):
+        self.__current_health -= damage
+        if self.__current_health <= 0:
+            self.__is_alive = False
+            self.__current_health = 0
+        return damage
+
 
 hero = Character("Brave Knight", 100, 15, 5)
 print(hero)
