@@ -7,6 +7,10 @@ class Character:
         self.__defense = defense
         self.__is_alive = True
 
+    def __str__(self):
+        return f"{self.name} - HP: {self.max_health}/{self.current_health} | ATK: {self.attack_power} | DEF: {self.defense}"
+
+
     @property
     def name(self):
         return self.__name
