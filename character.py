@@ -8,9 +8,9 @@ class Character:
         self.__is_alive = True
 
     def __str__(self):
-        return f"{self.name} - HP: {self.max_health}/{self.current_health} | ATK: {self.attack_power} | DEF: {self.defense}"
-
-
+        return f"{self.name} - HP: {self.current_health}/{self.max_health} | ATK: {self.attack_power} | DEF: {self.defense}"
+    def __repr__(self):
+        return f"Character(name='{self.name}' , hp={self.current_health}/{self.max_health})"
     @property
     def name(self):
         return self.__name
