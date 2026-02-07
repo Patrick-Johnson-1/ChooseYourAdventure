@@ -7,6 +7,25 @@ class Character:
         self.__defense = defense
         self.__is_alive = True
 
+    @property
+    def name(self):
+        return self.__name
+    @property
+    def max_health(self):
+        return self.__max_health
+    @property
+    def current_health(self):
+        return self.__current_health
+    @property
+    def attack_power(self):
+        return self.__attack_power
+    @property
+    def defense(self):
+        return self.__defense
+    @property
+    def is_alive(self):
+        return self.__is_alive
+
 
 hero = Character("Brave Knight", 100, 15, 5)
 print(hero)
