@@ -27,3 +27,6 @@ class Inventory:
     def is_full(self):
         return len(self.__items) == self.__max_size
 
+    def get_items(self):
+        return self.__items.copy()
+
