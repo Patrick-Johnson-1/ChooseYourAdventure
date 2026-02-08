@@ -1,3 +1,5 @@
+import random
+
 class Character:
     def __init__(self, name, max_health,attack_power, defense):
         self.__name = name
@@ -42,7 +44,12 @@ class Character:
         self.__current_health = min(self.__max_health, self.__current_health)
         return amount
 
-
+    def attack(self, target):
+        damage = self.attack_power * random.uniform(.80,1.2)
+        damage = damage  - target.defense
+        damage = max(0, damage)
+        target.take_damage(damage)
+        return damage
 
 hero = Character("Brave Knight", 100, 15, 5)
 print(hero)
