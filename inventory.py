@@ -15,3 +15,8 @@ class Inventory:
             return self.__items.remove(item_name)
         else:
             return None
+    def get_item(self, item_name):
+        if item_name in self.__items:
+            return item_name
+        else:
+            return item_name
