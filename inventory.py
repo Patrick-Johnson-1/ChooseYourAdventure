@@ -9,6 +9,7 @@ class Inventory:
             return True
         else:
             return False
+
     def remove_item(self, item_name):
             for item in self.__items:
                 if item.name == item_name:
@@ -16,6 +17,7 @@ class Inventory:
                 return item
             else:
                 return None
+
     def get_item(self, item_name):
         for item in self.__items:
             if item.name == item_name:
@@ -24,3 +26,4 @@ class Inventory:
 
     def is_full(self):
         return len(self.__items) == self.__max_size
+
