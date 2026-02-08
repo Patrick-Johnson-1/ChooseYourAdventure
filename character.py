@@ -51,5 +51,8 @@ class Character:
         target.take_damage(damage)
         return damage
 
+    def get_health_percentage(self):
+        return self.__current_health / self.__max_health * 100
+
 hero = Character("Brave Knight", 100, 15, 5)
 print(hero)
