@@ -37,6 +37,12 @@ class Character:
             self.__current_health = 0
         return damage
 
+    def heal(self, amount):
+        self.__current_health += amount
+        self.__current_health = min(self.__max_health, self.__current_health)
+        return amount
+
+
 
 hero = Character("Brave Knight", 100, 15, 5)
 print(hero)
