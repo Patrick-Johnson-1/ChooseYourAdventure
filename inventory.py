@@ -4,19 +4,21 @@ class Inventory:
         self.__max_size = max_size
 
     def add_item(self, item):
-        if len(self.__items) < 10:
-            self.__items.append(self.__items)
+        if len(self.__items) < self.__max_size:
+            self.__items.append(item)
             return True
         else:
             return False
     def remove_item(self, item_name):
         if item_name in self.__items:
-            self.__items.remove(item_name)
-            return self.__items.remove(item_name)
+            for item in self.__items:
+                if item.name == item_name:
+                    self.__items.remove(item_name)
+                return item
         else:
             return None
     def get_item(self, item_name):
-        if item_name in self.__items:
-            return item_name
-        else:
-            return item_name
+        for item in self.__items:
+            if item.name == item_name:
+                return item
+        return None
