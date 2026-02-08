@@ -21,3 +21,6 @@ class Inventory:
             if item.name == item_name:
                 return item
         return None
+
+    def is_full(self):
+        return len(self.__items) == self.__max_size
