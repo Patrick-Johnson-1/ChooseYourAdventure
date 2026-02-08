@@ -10,13 +10,12 @@ class Inventory:
         else:
             return False
     def remove_item(self, item_name):
-        if item_name in self.__items:
             for item in self.__items:
                 if item.name == item_name:
-                    self.__items.remove(item_name)
+                    self.__items.remove(item)
                 return item
-        else:
-            return None
+            else:
+                return None
     def get_item(self, item_name):
         for item in self.__items:
             if item.name == item_name:
