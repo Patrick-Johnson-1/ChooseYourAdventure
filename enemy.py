@@ -12,6 +12,17 @@ class Enemy(Character):
     def gold_reward(self):
         return self.__gold_reward
 
+    @staticmethod
+    def create_goblin(level = 1):
+        return Enemy(
+            name=f"Goblin (Lv.{level})",
+            max_health=30 + (level * 10),
+            attack_power=8 + (level * 2),
+            defense=2 + level,
+            xp_reward=20 * level,
+            gold_reward=10 * level
+        )
+
 
     def get_rewards(self):
         return  self.xp_reward, self.gold_reward
