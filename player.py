@@ -10,7 +10,7 @@ class Player(Character):
         self.__inventory = Inventory()
     def __str__(self):
         #Example: "Hero Lv.3 | HP: 140/140 | ATK: 25 | DEF: 14 | XP: 50/300 | Gold: 150
-        return (f"{self.name}Lv.{self.level} | HP: {self.current_health}/{self.max_health} | ATK: {self.attack_power} | DEF: {self.defense} |"
+        return (f"{self.name} Lv.{self.level} | HP: {self.current_health}/{self.max_health} | ATK: {self.attack_power} | DEF: {self.defense} |"
                 f" XP: {self.experience}/{self.level * 100} | Gold: {self.gold}")
 
     @property
