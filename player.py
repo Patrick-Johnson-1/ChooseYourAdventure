@@ -18,6 +18,6 @@ class Player(Character):
     @property
     def gold(self):
         return self.__gold
-    @@property
+    @property
     def inventory(self):
         return  self.__inventory
