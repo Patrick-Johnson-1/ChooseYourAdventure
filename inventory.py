@@ -38,3 +38,10 @@ class Inventory:
                 potions.append(item)
         return potions
 
+    def get_weapons(self):
+        weapons = []
+        for item in self.__items:
+            if isinstance(item, Weapon):
+                weapons.append(item)
+        return weapons
+
