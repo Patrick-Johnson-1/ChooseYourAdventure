@@ -36,3 +36,13 @@ class Player(Character):
         self._Character__defense += 3
         self._Character__current_health = self._Character__max_health
         return True
+
+    def add_gold(self, amount):
+        self.__gold += amount
+
+    def spend_gold(self, amount):
+        if amount <= self.__gold:
+            self.__gold -= amount
+            return True
+        else:
+            return False
