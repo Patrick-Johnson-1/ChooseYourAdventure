@@ -4,3 +4,10 @@ from inventory import Inventory
 from item import Weapon, Potion
 import random
 import json
+
+class Game:
+    def __init__(self, player_name):
+        self.__player = Player(player_name)
+        self.__current_enemy = None
+        self.__in_combat = False
+        self.__game_running = True
