@@ -45,3 +45,8 @@ class Inventory:
                 weapons.append(item)
         return weapons
 
+    def __len__(self):
+        return len(self.__items)
+
+    def __str__(self):
+        return f"Inventory: {len(self.__items)} items"
