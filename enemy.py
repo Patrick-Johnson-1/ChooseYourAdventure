@@ -11,3 +11,7 @@ class Enemy(Character):
     @property
     def gold_reward(self):
         return self.__gold_reward
+
+
+    def get_rewards(self):
+        return  self.xp_reward, self.gold_reward
