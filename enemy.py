@@ -23,6 +23,27 @@ class Enemy(Character):
             gold_reward=10 * level
         )
 
+    @staticmethod
+    def create_orc(level=1):
+        return Enemy(
+            name=f"Orc (Lv.{level})",
+            max_health=50 + (level * 15),  # Stronger than Goblin
+            attack_power=12 + (level * 3),
+            defense=5 + (level * 2),
+            xp_reward=40 * level,
+            gold_reward=25 * level
+        )
+
+    @staticmethod
+    def create_dragon(level=1):
+        return Enemy(
+            name=f"Dragon (Lv.{level})",
+            max_health=150 + (level * 30),  # Boss-tier
+            attack_power=25 + (level * 5),
+            defense=10 + (level * 3),
+            xp_reward=200 * level,
+            gold_reward=100 * level
+        )
 
     def get_rewards(self):
         return  self.xp_reward, self.gold_reward
