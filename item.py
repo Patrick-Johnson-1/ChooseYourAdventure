@@ -30,14 +30,8 @@ class Potion(Item):
         super().__init__(name,description,value)
         self.__heal_amount = heal_amount
     def __str__(self):
-        return f"{self.name} - ATK +{self.heal_amount} ({self.description})"
+        return f"{self.name} - Heals +{self.heal_amount} ({self.description})"
     @property
     def heal_amount(self):
         return self.__heal_amount
 
-
-sword = Weapon("Iron Sword", "A sturdy blade", 50, 12)
-print(sword)  # "Iron Sword - ATK +12 (A sturdy blade)"
-
-potion = Potion("Health Potion", "Restores health", 15, 30)
-print(potion)  # "Health Potion - Heals 30 HP (Restores health)"
