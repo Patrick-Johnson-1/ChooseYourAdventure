@@ -19,3 +19,11 @@ class Weapon(Item):
     def __init__(self, name, description, value, attack_bonus):
         super().__init__(name,description,value)
         self.__attack_bonus = attack_bonus
+    def __str__(self):
+        return f"{self.name} - ATK +{self.attack_bonus} ({self.description})"
+    @property
+    def attack_bonus(self):
+        return self.__attack_bonus
+
+sword = Weapon("Iron Sword", "A sturdy blade", 50, 12)
+print(sword)  # "Iron Sword - ATK +12 (A sturdy blade)"
