@@ -21,3 +21,18 @@ class Player(Character):
     @property
     def inventory(self):
         return  self.__inventory
+
+    def gain_experience(self, amount):
+        self.__experience += amount
+        level_up_xp = 100 * self.__level
+        if self.__experience >= level_up_xp:
+            self.level_up()
+
+    def level_up(self):
+        self.__level+=1
+        self.__experience = 0
+        self._Character__max_health += 20
+        self._Character__attack_power += 5
+        self._Character__defense += 3
+        self._Character__current_health = self._Character__max_health
+        return True
