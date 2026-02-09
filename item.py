@@ -4,7 +4,7 @@ class Item:
         self.__description = description
         self.__value = value
     def __str__(self):
-        return f"{self.name} - {self.description} (Value: {self.value}g"
+        return f"{self.name} - {self.description} (Value: {self.value}g)"
     @property
     def name(self):
         return self.__name
@@ -14,3 +14,4 @@ class Item:
     @property
     def value (self):
         return self.__value
+
