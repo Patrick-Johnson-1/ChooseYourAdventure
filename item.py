@@ -3,7 +3,8 @@ class Item:
         self.__name = name
         self.__description = description
         self.__value = value
-
+    def __str__(self):
+        return f"{self.name} - {self.description} (Value: {self.value}g"
     @property
     def name(self):
         return self.__name
