@@ -31,3 +31,10 @@ class Inventory:
     def get_items(self):
         return self.__items.copy()
 
+    def get_potions(self):
+        potions = []
+        for item in self.__items:
+            if isinstance(item, Potion):
+                potions.append(item)
+        return potions
+
