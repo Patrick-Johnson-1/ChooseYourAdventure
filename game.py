@@ -11,3 +11,6 @@ class Game:
         self.__current_enemy = None
         self.__in_combat = False
         self.__game_running = True
+    def start_combat(self, enemy):
+        self.__current_enemy = enemy
+        self.__in_combat = True
