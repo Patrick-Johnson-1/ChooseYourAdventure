@@ -1,4 +1,5 @@
 from character import Character
+from inventory import Inventory
 
 class Player(Character):
     def __init__(self, name):
