@@ -7,5 +7,17 @@ class Player(Character):
         self.__level = 1
         self.__experience = 0
         self.__gold = 0
-        self.__inventory = "PlaceHolder"
+        self.__inventory = Inventory()
 
+    @property
+    def level(self):
+        return self.__level
+    @property
+    def experience(self):
+        return self.__experience
+    @property
+    def gold(self):
+        return self.__gold
+    @@property
+    def inventory(self):
+        return  self.__inventory
