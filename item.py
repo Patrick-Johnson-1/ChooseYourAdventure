@@ -15,3 +15,7 @@ class Item:
     def value (self):
         return self.__value
 
+class Weapon(Item):
+    def __init__(self, name, description, value, attack_bonus):
+        super().__init__(name,description,value)
+        self.__attack_bonus = attack_bonus
