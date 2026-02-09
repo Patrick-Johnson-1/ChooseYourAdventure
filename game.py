@@ -14,6 +14,11 @@ class Game:
     def start_combat(self, enemy):
         self.__current_enemy = enemy
         self.__in_combat = True
+    def rest(self):
+        heal_amount = int(self.__player.max_health*.30)
+        self.__player.heal(heal_amount)
+        return f"You rest and recover {heal_amount} HP"
+
 
     def player_turn(self, action):
         if action == "attack":
