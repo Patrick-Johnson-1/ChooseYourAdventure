@@ -29,3 +29,15 @@ class Game:
             pass
         elif action == "run":
             pass
+
+    @staticmethod
+    def create_random_enemy(player_level):
+        rand = random.random()
+        if rand >= .90:
+            return Enemy.create_dragon(level=player_level)
+        elif  .75 <= rand <=.89:
+            return Enemy.create_orc(level=player_level)
+        else:
+            return Enemy.create_goblin(level=player_level)
+
+
