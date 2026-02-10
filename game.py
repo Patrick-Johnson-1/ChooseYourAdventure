@@ -50,6 +50,11 @@ class Game:
             self.__current_enemy = None
             return f"Victory! Gained {xp} XP and {gold} gold!"
 
+    def enemy_turn(self):
+        damage = self.__current_enemy.attack(self.__player)
+        return f"{self.__current_enemy.name} dealt {damage:.1f} damage!"
+
+
 
     def player_turn(self, action):
         if action == "attack":
