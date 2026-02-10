@@ -18,7 +18,25 @@ class Game:
         heal_amount = int(self.__player.max_health*.30)
         self.__player.heal(heal_amount)
         return f"You rest and recover {heal_amount} HP"
-
+    def explore(self):
+        rand = random.random()
+        if rand <= 0.40:
+            enemy = Game.create_random_enemy(self.__player.level)
+            self.start_combat(enemy)
+            return f"You encountered a {enemy.name}!"
+        elif rand <= 0.70:  # 30% chance (0.40 to 0.70)
+            gold_found = random.randint(10, 30)
+            self.__player.add_gold(gold_found)
+            return f"You found {gold_found} gold!"
+        else:
+            items = [
+                Potion("Small Potion", "Restores 30 HP", 15, 30),
+                Potion("Large Potion", "Restores 70 HP", 40, 70),
+                Weapon("Iron Sword", "A sturdy blade", 50, 12)
+            ]
+            item = random.choice(items)
+            self.__player.inventory.add_item(item)
+            return f"You found a {item.name}!"
 
     def player_turn(self, action):
         if action == "attack":
