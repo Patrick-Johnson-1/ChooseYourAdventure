@@ -38,6 +38,19 @@ class Game:
             self.__player.inventory.add_item(item)
             return f"You found a {item.name}!"
 
+    def end_combat(self):
+        if not self.__player.is_alive:
+            self.__game_running = False
+            return "GAME_OVER"
+        if not self.__current_enemy.is_alive:
+            xp, gold = self.__current_enemy.get_rewards()
+            self.__player.gain_experience(xp)
+            self.__player.add_gold(gold)
+            self.__in_combat = False
+            self.__current_enemy = None
+            return f"Victory! Gained {xp} XP and {gold} gold!"
+
+
     def player_turn(self, action):
         if action == "attack":
             damage = self.__player.attack(self.__current_enemy)
